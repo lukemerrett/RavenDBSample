@@ -10,7 +10,7 @@ namespace RavenDBSample.Sample
     /// <summary>
     /// Example class showing how to interact with RavenDB.
     /// </summary>
-    public static class SampleCommands
+    public static class BasicSampleCommands
     {
         /// <summary>
         /// Shows how to delete all records that mach a specific query in RavenDB

@@ -7,9 +7,9 @@
     {
         public static void Main(string[] args)
         {
-            SampleCommands.DeleteAllReubenAlbumsFromRavenDb();
-            SampleCommands.AddReubenAlbumToRavenDb();
-            SampleCommands.GetAllReubenAlbumsFromRaven();
+            BasicSampleCommands.DeleteAllReubenAlbumsFromRavenDb();
+            BasicSampleCommands.AddReubenAlbumToRavenDb();
+            BasicSampleCommands.GetAllReubenAlbumsFromRaven();
 
             Console.WriteLine("Press enter to exit");
             Console.ReadLine(); // Pause execution

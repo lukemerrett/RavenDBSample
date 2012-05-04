@@ -69,7 +69,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RavenAccess\RavenSession.cs" />
-    <Compile Include="Sample\SampleCommands.cs" />
+    <Compile Include="Sample\BasicSampleCommands.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
