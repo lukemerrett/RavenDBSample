@@ -1,15 +1,14 @@
 ﻿namespace RavenDBSample
 {
     using System;
-
-    using SampleCommands;
+    using Sample;
 
     public class Program
     {
         public static void Main(string[] args)
         {
-            WriteDtoToRavenDb.AddReubenAlbumToRavenDb();
-            ReadDtoFromRavenDb.GetReubenAlbumFromRaven();
+            SampleCommands.AddReubenAlbumToRavenDb();
+            SampleCommands.GetAllReubenAlbumsFromRaven();
             Console.ReadLine(); // Pause execution
         }
     }
