@@ -13,6 +13,26 @@ namespace RavenDBSample.Sample
     public static class SampleCommands
     {
         /// <summary>
+        /// Shows how to delete all records that mach a specific query in RavenDB
+        /// </summary>
+        internal static void DeleteAllReubenAlbumsFromRavenDb()
+        {
+            var session = RavenSession.OpenSession();
+
+            var allAlbums = session.Query<Album>();
+
+            var reubenAlbums = allAlbums.Where(x => x.Artist == "Reuben");
+
+            foreach (var album in reubenAlbums)
+            {
+                Console.WriteLine("Removing '" + album.Title + "' from RavenDB");
+                session.Delete(album);
+            }
+
+            RavenSession.SaveAndCloseSession(session);
+        }
+
+        /// <summary>
         /// Shows how to check the existence of an object in RavenDB then add it
         /// if it does not exist.
         /// </summary>
@@ -29,12 +49,12 @@ namespace RavenDBSample.Sample
 
             if (AlbumDoesntAlreadyExist(session, reubenAlbum))
             {
-                Console.WriteLine("Adding " + reubenAlbum.Title + " to RavenDB");
+                Console.WriteLine("Adding '" + reubenAlbum.Title + "' to RavenDB");
                 session.Store(reubenAlbum);
             }
             else
             {
-                Console.WriteLine("Album " + reubenAlbum.Title + " already exists in RavenDB");
+                Console.WriteLine("Album '" + reubenAlbum.Title + "' already exists in RavenDB");
             }
 
             RavenSession.SaveAndCloseSession(session);
@@ -53,7 +73,7 @@ namespace RavenDBSample.Sample
 
             foreach (var album in reubenAlbums)
             {
-                Console.WriteLine(album.Title);
+                Console.WriteLine("Reading '" + album.Title + "' from RavenDB");
             }
 
             RavenSession.SaveAndCloseSession(session);
