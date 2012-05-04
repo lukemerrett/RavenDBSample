@@ -1,7 +1,13 @@
 DEPENDENCIES
 ============
 
-RavenDB Client/Server package - Managed by NuGet in this example
+NuGet - http://nuget.org
+
+Downloading the RavenDB Server through NuGet
+============================================
+
+PM> install-package ravendb
+
 
 Starting the RavenDB Server Locally
 ===================================
